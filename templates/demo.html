@@ -2,11 +2,13 @@
 {% block title %}Demo API {% endblock %}
 {% block page_title %} Demonstration API {% endblock %}
 {% block content %}
-<h1 id="test">Hallo ich bin Content</h1>
 
-{% for message in get_flashed_messages() %}
+<div id="getresult">
+    {% for message in get_flashed_messages() %}
     {{message}}
-{% endfor %}
+    {% endfor %}
+</div>
+
 
 <div id="tables">
     <div id="status_open">
