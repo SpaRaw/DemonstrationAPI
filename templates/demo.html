@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+{% block title %}Demo API {% endblock %}
+{% block page_title %} Demonstration API {% endblock %}
+{% block content %}
+<h1 id="test">Hallo ich bin Content</h1>
+
+{% for message in get_flashed_messages() %}
+    {{message}}
+{% endfor %}
+
+<div id="tables">
+    <div id="status_open">
+        <table id="open-tickets">
+            <tr>
+                <td >INDEX</td>
+                <td>PRIO</td>
+                <td>DATA</td>
+                <td>ZEIT</td>
+                <td>STATUS</td>
+                <td>ZEITSTEMPEL</td>
+            </tr>
+            {% for data_row in list_of_open %}
+                <tr>
+                    {% for element in data_row %}
+                        <td>
+                            {{element}}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+<div id="status_closed">
+        <table id="closed-tickets">
+            <tr>
+                <td>INDEX</td>
+                <td>PRIO</td>
+                <td>DATA</td>
+                <td>ZEIT</td>
+                <td>STATUS</td>
+                <td>ZEITSTEMPEL</td>
+            </tr>
+            {% for data_row in list_of_close %}
+                <tr>
+                    {% for element in data_row %}
+                        <td>
+                            {{element}}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+</div>
+</div>
+{% endblock %}
