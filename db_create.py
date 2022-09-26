@@ -1,4 +1,5 @@
 import sqlite3
+from app import app
 
 connection = sqlite3.connect("ticket.db")
 cursor = connection.cursor()
